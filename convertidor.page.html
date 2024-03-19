@@ -1,0 +1,65 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>convertidor Inicial</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="fondo">
+  <ion-card class="conver">
+    <ion-card-header>
+      <ion-card-title>Convertidor de monedas</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+        <ion-radio-group [(ngModel)]="tipoMoneda">
+          <ion-list-header>
+            <ion-label class="letra">Seleccione el tipo de moneda que ingresa:</ion-label>
+          </ion-list-header>
+          
+          <ion-item>
+            <ion-label>Dolar</ion-label>
+            <ion-radio value="dolarP"></ion-radio>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label>Euro</ion-label>
+            <ion-radio value="euroP"></ion-radio>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label>Peso</ion-label>
+            <ion-radio value="pesoP"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+          <ion-label>Bolivares</ion-label>
+          <ion-radio value="bolivarP"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+        <ion-label>Rupia</ion-label>
+        <ion-radio value="rupiaP"></ion-radio>
+      </ion-item>
+          
+        </ion-radio-group>
+      </ion-list>
+      
+     <ion-label class="letra">Inserte su cantidad de dinero</ion-label>
+     <ion-input class="borde" [(ngModel)]="cantidadDinero"></ion-input>
+     <ion-item>
+      <ion-label>Seleccione a que quiere convertir</ion-label>
+      <ion-select [(ngModel)]="opcionSeleccionada">
+        <ion-select-option value="opcion1">Euros</ion-select-option>
+        <ion-select-option value="opcion2">Dolares</ion-select-option>
+        <ion-select-option value="opcion3">Rupia</ion-select-option>
+        <ion-select-option value="opcion4">Bolivares</ion-select-option>
+        <ion-select-option value="opcion5">Pesos</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-button (click)="conversion()">Conversion</ion-button>
+      <p class="letra">El resultado de la conversión es: {{ resultadoConversion }}</p>
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>
